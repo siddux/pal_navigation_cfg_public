@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>pal_navigation_cfg_tiago</name>
+  <version>1.0.0</version>
+  <description>Robot specific config and launch files needed to run
+    navigation on the tiago robot.</description>
+  <maintainer email="procopio.stein@pal-robotics.com">Procopio Stein</maintainer>
+  <license>Apache License 2.0</license>
+  <author email="sai.kishor@pal-robotics.com">Sai Kishor Kothakota</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+</package>
