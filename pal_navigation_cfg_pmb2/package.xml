@@ -26,6 +26,7 @@
   <exec_depend>pal_navigation_sm</exec_depend>
   <exec_depend>rviz_plugin_covariance</exec_depend>
   <exec_depend>teb_local_planner</exec_depend>
+  <exec_depend>eband_local_planner</exec_depend>
   <exec_depend>range_sensor_layer</exec_depend>
 
 </package>
