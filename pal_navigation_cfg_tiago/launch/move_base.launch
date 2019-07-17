@@ -57,6 +57,9 @@
     <param if="$(arg multiple)" name="local_costmap/obstacle_sonar_layer/sonar_max_range_cloud/sensor_frame" value="$(arg tf_prefix)/base_link"/>
     <param if="$(arg multiple)" name="local_costmap/obstacle_vo_layer/vo_cloud/sensor_frame" value="$(arg tf_prefix)/base_link"/>
 
+    <param if="$(arg multiple)" name="PalLocalPlanner/robot_namespace" value="$(arg tf_prefix)"/>
+    <param if="$(arg multiple)" name="local_planner/laser_frame" value="$(arg tf_prefix)/base_laser_link"/>
+    <param if="$(arg multiple)" name="local_planner/base_frame" value="$(arg tf_prefix)/base_link"/>
   </node>
 
   <group if="$(arg debug_rgbd)">
