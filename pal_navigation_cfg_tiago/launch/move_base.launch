@@ -45,12 +45,17 @@
     <param if="$(arg multiple)" name="global_costmap/robot_base_frame" value="$(arg tf_prefix)/base_footprint"/>
     <param if="$(arg multiple)" name="global_costmap/obstacle_laser_layer/base_scan/sensor_frame" value="$(arg tf_prefix)/base_laser_link"/>
     <param if="$(arg multiple)" name="global_costmap/obstacle_rgbd_layer/rgbd_scan/sensor_frame" value="$(arg tf_prefix)/base_footprint"/>
+    <param if="$(arg multiple)" name="global_costmap/obstacle_sonar_layer/sonar_cloud/sensor_frame" value="$(arg tf_prefix)/base_link"/>
+    <param if="$(arg multiple)" name="global_costmap/obstacle_sonar_layer/sonar_max_range_cloud/sensor_frame" value="$(arg tf_prefix)/base_link"/>
+    <param if="$(arg multiple)" name="global_costmap/obstacle_vo_layer/vo_cloud/sensor_frame" value="$(arg tf_prefix)/base_link"/>
+
     <param if="$(arg multiple)" name="local_costmap/global_frame" value="$(arg tf_prefix)/odom"/>
     <param if="$(arg multiple)" name="local_costmap/robot_base_frame" value="$(arg tf_prefix)/base_footprint"/>
     <param if="$(arg multiple)" name="local_costmap/obstacle_laser_layer/base_scan/sensor_frame" value="$(arg tf_prefix)/base_laser_link"/>
     <param if="$(arg multiple)" name="local_costmap/obstacle_rgbd_layer/rgbd_scan/sensor_frame" value="$(arg tf_prefix)/base_footprint"/>
-    <param if="$(arg multiple)" name="local_costmap/obstacle_sonar_layer/sonar_cloud/sensor_frame" value="$(arg tf_prefix)/sonar_cloud"/>
+    <param if="$(arg multiple)" name="local_costmap/obstacle_sonar_layer/sonar_cloud/sensor_frame" value="$(arg tf_prefix)/base_link"/>
     <param if="$(arg multiple)" name="local_costmap/obstacle_sonar_layer/sonar_max_range_cloud/sensor_frame" value="$(arg tf_prefix)/base_link"/>
+    <param if="$(arg multiple)" name="local_costmap/obstacle_vo_layer/vo_cloud/sensor_frame" value="$(arg tf_prefix)/base_link"/>
 
   </node>
 
