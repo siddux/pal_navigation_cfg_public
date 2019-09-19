@@ -1,3 +1,5 @@
+base_local_planner: base_local_planner/TrajectoryPlannerROS 
+
 TrajectoryPlannerROS:
   # Acceleration limits
   acc_lim_th: !degrees 60.0
