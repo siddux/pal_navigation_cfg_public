@@ -1,3 +1,5 @@
+base_local_planner: robotino_local_planner/RobotinoLocalPlanner
+
 RobotinoLocalPlanner:
   heading_lookahead: 1.0
   num_window_points: 10
