@@ -7,13 +7,15 @@
   <arg name="odom"    default="mobile_base_controller/odom"/>
   <arg name="cmd_vel" default="nav_vel"/>
 
+
   <arg name="debug_rgbd" default="false"/>
   <arg name="debug"      default="false"/>
-
   <arg name="launch_prefix" value="gdb -ex run --args"     if="$(arg debug)"/>
   <arg name="launch_prefix" value=""                   unless="$(arg debug)"/>
 
   <arg name="config_base_path" default="$(find pal_navigation_cfg_tiago_dual)"/>
+
+  <arg name="debug_rgbd" default="false"/>
 
   <arg name="public_sim"   default="false"/>
   <arg name="rgbd_sensors"   default="false"/> <!-- do not enable with public_sim -->
@@ -31,16 +33,17 @@
 
     <rosparam command="load" file="$(arg config_base_path)/config/base/common/move_base.yaml"/>
     <rosparam command="load" file="$(arg config_base_path)/config/base/common/recovery_behaviors$(arg rgbd_suffix).yaml"/>
-    <rosparam command="load" file="$(arg config_base_path)/config/base/common/global_costmap$(arg sim_suffix).yaml"/>
-    <rosparam command="load" file="$(arg config_base_path)/config/base/common/local_costmap$(arg sim_suffix).yaml"/>
+    
     <rosparam command="load" file="$(arg config_base_path)/config/base/common/global_costmap_plugins$(arg sim_suffix)$(arg rgbd_suffix).yaml"/>
+    <rosparam command="load" file="$(arg config_base_path)/config/base/common/global_costmap$(arg sim_suffix).yaml"/>
+    
     <rosparam command="load" file="$(arg config_base_path)/config/base/common/local_costmap_plugins$(arg sim_suffix)$(arg rgbd_suffix).yaml"/>
+    <rosparam command="load" file="$(arg config_base_path)/config/base/common/local_costmap$(arg sim_suffix).yaml"/>
 
     <rosparam command="load" file="$(arg config_base_path)/config/base/global_planner/$(arg global_planner).yaml"/>
-
-    <rosparam command="load" file="$(arg config_base_path)/config/base/$(arg local_planner)/move_base.yaml"/>
     <rosparam command="load" file="$(arg config_base_path)/config/base/$(arg local_planner)/local_planner.yaml"/>
 
+    
     <param if="$(arg multiple)" name="global_costmap/global_frame" value="$(arg tf_prefix)/map"/>
     <param if="$(arg multiple)" name="global_costmap/robot_base_frame" value="$(arg tf_prefix)/base_footprint"/>
     <param if="$(arg multiple)" name="global_costmap/obstacle_laser_layer/base_scan/sensor_frame" value="$(arg tf_prefix)/base_laser_link"/>
