@@ -28,7 +28,7 @@ TebLocalPlannerROS:
  is_footprint_dynamic: true
  footprint_model:
   type: "circular"
-  radius: 0.3
+  radius: 0.35
  #  type: "polygon"
  #  vertices: [[0.17,-0.31],[0.23,-0.18],[0.23,0.18],[0.17,0.31],[-0.20,0.40],[-0.56,0.3],[-0.6, 0],[-0.56,-0.3],[-0.20,-0.40]]
 

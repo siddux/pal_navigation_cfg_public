@@ -4,7 +4,7 @@ local_costmap:
     - name: obstacle_laser_layer
       type: 'costmap_2d::ObstacleLayer'
     - name: obstacle_sonar_layer
-      type: 'costmap_2d::ObstacleLayer'
+      type: 'range_sensor_layer::RangeSensorLayer'
     - name: obstacle_rgbd_layer
       type: 'costmap_2d::ObstacleLayer'
     - name: inflation_layer
