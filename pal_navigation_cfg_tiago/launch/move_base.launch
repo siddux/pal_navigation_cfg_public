@@ -8,14 +8,11 @@
   <arg name="cmd_vel" default="nav_vel"/>
 
 
-  <arg name="debug_rgbd" default="false"/>
   <arg name="debug"      default="false"/>
   <arg name="launch_prefix" value="gdb -ex run --args"     if="$(arg debug)"/>
   <arg name="launch_prefix" value=""                   unless="$(arg debug)"/>
 
   <arg name="config_base_path" default="$(find pal_navigation_cfg_tiago)"/>
-
-  <arg name="debug_rgbd" default="false"/>
 
   <arg name="public_sim"   default="false"/>
   <arg name="rgbd_sensors"   default="false"/> <!-- do not enable with public_sim -->
@@ -43,7 +40,7 @@
     <rosparam command="load" file="$(arg config_base_path)/config/base/global_planner/$(arg global_planner).yaml"/>
     <rosparam command="load" file="$(arg config_base_path)/config/base/$(arg local_planner)/local_planner.yaml"/>
 
-    
+
     <param if="$(arg multiple)" name="global_costmap/global_frame" value="$(arg tf_prefix)/map"/>
     <param if="$(arg multiple)" name="global_costmap/robot_base_frame" value="$(arg tf_prefix)/base_footprint"/>
     <param if="$(arg multiple)" name="global_costmap/obstacle_laser_layer/base_scan/sensor_frame" value="$(arg tf_prefix)/base_laser_link"/>
@@ -65,6 +62,7 @@
     <param if="$(arg multiple)" name="local_planner/base_frame" value="$(arg tf_prefix)/base_link"/>
   </node>
 
+  <arg name="debug_rgbd" default="false"/>
   <group if="$(arg debug_rgbd)">
     <node pkg="costmap_2d" type="costmap_2d_markers" name="costmap_2d_markers_global">
       <remap from="voxel_grid" to="move_base/global_costmap/obstacle_rgbd_layer/voxel_grid"/>
