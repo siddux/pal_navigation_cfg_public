@@ -11,7 +11,7 @@ global_costmap:
 
   robot_radius: 0.23
 
-  #plugins are loaded in a separate yaml file
+  #plugins are loaded on a separate file
 
   static_layer:
     enabled  : true
