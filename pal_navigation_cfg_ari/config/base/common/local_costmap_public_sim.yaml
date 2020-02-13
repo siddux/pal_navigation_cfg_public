@@ -1,7 +1,5 @@
 # Independent settings for the local costmap
 local_costmap:
-  map_type: costmap
-
   global_frame    : odom
   robot_base_frame: base_footprint
   transform_tolerance: 0.2
