@@ -8,7 +8,7 @@
   <arg name="initialpose"  default="initialpose"/>
 
   <arg name="multiple" default="false"/>
-  <arg name="tf_prefix" default=""/>
+  <arg name="robot_namespace" default=""/>
 
   <!-- Fake localization -->
   <node pkg="fake_localization" type="fake_localization" name="fake_localization">
