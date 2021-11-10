@@ -7,7 +7,9 @@
   <arg name="sim_sufix" value="_public_sim"     if="$(arg public_sim)"/>
   <arg name="sim_sufix" value=""                unless="$(arg public_sim)"/>
 
-  <arg name="config" default="$(find pal_navigation_cfg_ari)/config/state_machine/state_machine$(arg sim_sufix).yaml"/>
+  <arg name="laser_model"   default="false"/>
+  <arg name="laser_suffix" value="$(eval ('_laser' if laser_model else ''))"/>
+  <arg name="config" default="$(find pal_navigation_cfg_ari)/config/state_machine/state_machine$(arg sim_sufix)$(arg laser_suffix).yaml"/>
 
   <include file="$(find pal_navigation_sm)/launch/pal_navigation_sm.launch">
     <arg name="state"  value="$(arg state)"/>

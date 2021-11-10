@@ -7,6 +7,8 @@
   <arg name="ground_truth" default="ground_truth_odom"/>
   <arg name="initialpose"  default="initialpose"/>
 
+  <arg name="scan_topic" default="scan" />
+  <arg name="laser_model" default="false"/>
 
   <!-- Fake localization -->
   <node pkg="fake_localization" type="fake_localization" name="fake_localization">

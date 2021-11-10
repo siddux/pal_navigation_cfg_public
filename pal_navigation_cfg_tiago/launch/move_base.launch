@@ -22,6 +22,9 @@
   <arg name="sim_suffix" value=""                unless="$(arg public_sim)"/>
   <arg name="rgbd_suffix" value="_rgbd" if="$(arg rgbd_sensors)"/>
   <arg name="rgbd_suffix" value=""      unless="$(arg rgbd_sensors)"/>
+  <arg name="base_type"     default="pmb2"/>
+  <arg name="base_type_suffix" value="" unless="$(eval arg('base_type') == 'omni_base')"/>
+  <arg name="base_type_suffix" value="_omni" if="$(eval arg('base_type') == 'omni_base')"/>
 
   <arg name="multiple" default="false"/>
   <arg name="robot_namespace" default=""/>
@@ -32,14 +35,14 @@
     <rosparam command="load" file="$(arg config_base_path)/config/base/common/move_base.yaml"/>
     <rosparam command="load" file="$(arg config_base_path)/config/base/common/recovery_behaviors$(arg rgbd_suffix).yaml"/>
     
-    <rosparam command="load" file="$(arg config_base_path)/config/base/common/global_costmap_plugins$(arg sim_suffix)$(arg rgbd_suffix).yaml"/>
-    <rosparam command="load" file="$(arg config_base_path)/config/base/common/global_costmap$(arg sim_suffix).yaml"/>
-    
-    <rosparam command="load" file="$(arg config_base_path)/config/base/common/local_costmap_plugins$(arg sim_suffix)$(arg rgbd_suffix).yaml"/>
-    <rosparam command="load" file="$(arg config_base_path)/config/base/common/local_costmap$(arg sim_suffix).yaml"/>
+    <rosparam command="load" file="$(arg config_base_path)/config/base/common/global_costmap_plugins$(arg sim_suffix)$(arg rgbd_suffix)$(arg base_type_suffix).yaml"/>
+    <rosparam command="load" file="$(arg config_base_path)/config/base/common/global_costmap$(arg sim_suffix)$(arg base_type_suffix).yaml"/>
+      
+    <rosparam command="load" file="$(arg config_base_path)/config/base/common/local_costmap_plugins$(arg sim_suffix)$(arg rgbd_suffix)$(arg base_type_suffix).yaml"/>
+    <rosparam command="load" file="$(arg config_base_path)/config/base/common/local_costmap$(arg sim_suffix)$(arg base_type_suffix).yaml"/>
 
     <rosparam command="load" file="$(arg config_base_path)/config/base/global_planner/$(arg global_planner).yaml"/>
-    <rosparam command="load" file="$(arg config_base_path)/config/base/$(arg local_planner)/local_planner.yaml"/>
+    <rosparam command="load" file="$(arg config_base_path)/config/base/$(arg local_planner)/local_planner$(arg base_type_suffix).yaml"/>
 
     <param if="$(arg multiple)" name="global_costmap/global_frame" value="$(arg robot_namespace)/map"/>
     <param if="$(arg multiple)" name="global_costmap/robot_base_frame" value="$(arg robot_namespace)/base_footprint"/>

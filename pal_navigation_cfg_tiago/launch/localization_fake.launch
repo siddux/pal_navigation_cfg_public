@@ -9,6 +9,7 @@
 
   <arg name="multiple" default="false"/>
   <arg name="robot_namespace" default=""/>
+  <arg name="base_type"     default="pmb2"/>
 
   <!-- Fake localization -->
   <node pkg="fake_localization" type="fake_localization" name="fake_localization">

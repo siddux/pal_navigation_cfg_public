@@ -9,7 +9,10 @@
 
   <arg name="base_frame" default="/base_footprint"/>
   <arg name="map_frame"  default="/map"/>
-  <arg name="config" default="$(find pal_navigation_cfg_tiago_dual)/config/state_machine/state_machine$(arg sim_sufix).yaml"/>
+  <arg name="base_type"     default="pmb2"/>
+  <arg name="base_type_suffix" value="" unless="$(eval arg('base_type') == 'omni_base')"/>
+  <arg name="base_type_suffix" value="_omni" if="$(eval arg('base_type') == 'omni_base')"/>
+  <arg name="config" default="$(find pal_navigation_cfg_tiago_dual)/config/state_machine/state_machine$(arg sim_sufix)$(arg base_type_suffix).yaml"/>
 
   <include file="$(find pal_navigation_sm)/launch/pal_navigation_sm.launch">
     <arg name="state"  value="$(arg state)"/>
