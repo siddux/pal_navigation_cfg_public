@@ -22,6 +22,7 @@ local_costmap:
     map_topic: vo_map
     first_map_only: false
     use_maximum: true
+    track_unknown_space: false
 
   stvl_rgbd_layer:
     enabled:               true
