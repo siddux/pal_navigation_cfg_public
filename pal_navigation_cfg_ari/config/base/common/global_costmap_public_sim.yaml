@@ -17,21 +17,11 @@ global_costmap:
     enabled  : true
     map_topic: map
 
-  obstacle_vo_layer:
-    enabled: true
-    observation_sources: vo_cloud
-    combination_method: 1
-
-    vo_cloud:
-      sensor_frame: base_link
-      data_type: PointCloud
-      topic: vo_cloud
-      expected_update_rate: 12.0
-      observation_persistence: 0.0
-      marking: true
-      clearing: false
-      raytrace_range: 1.0
-      obstacle_range: 15.0
+  static_vo_layer:
+    enabled  : true
+    map_topic: vo_map
+    first_map_only: false           # subscribes to the map_topic for receiving updates 
+    use_maximum: true               # do not override the previous layers of the costmap
 
   stvl_rgbd_layer:
     enabled:               true

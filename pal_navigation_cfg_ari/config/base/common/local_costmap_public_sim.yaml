@@ -17,21 +17,12 @@ local_costmap:
   #plugins are loaded on a separate file
 
 
-  obstacle_vo_layer:
-    enabled: true
-    observation_sources: vo_cloud
-    combination_method: 1
-
-    vo_cloud:
-      sensor_frame: base_link
-      data_type: PointCloud
-      topic: vo_cloud
-      expected_update_rate: 12.0
-      observation_persistence: 0.0
-      marking: true
-      clearing: false
-      raytrace_range: 1.0
-      obstacle_range: 15.0
+  static_vo_layer:
+    enabled  : true
+    map_topic: vo_map
+    first_map_only: false
+    use_maximum: true
+    track_unknown_space: false
 
   stvl_rgbd_layer:
     enabled:               true
