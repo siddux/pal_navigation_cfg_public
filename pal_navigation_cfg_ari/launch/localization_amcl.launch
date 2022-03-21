@@ -2,10 +2,11 @@
 <launch>
   <arg name="scan_topic" default="rgbd_scan"/>
   <arg name="laser_model" default="false"/>
-  <arg name="map_topic" default="vo_map"/>
+  <arg name="map_topic" default="vo_loc_map"/>
 
   <node pkg="amcl" type="amcl" name="amcl" output="screen">
     <remap from="scan" to="$(arg scan_topic)"/>
+    <remap from="map" to="$(arg map_topic)"/>
 
     <!-- Load the last saved pose estimate (initial pose) -->
     <rosparam file="$(env HOME)/.pal/pose.yaml" command="load"/>
