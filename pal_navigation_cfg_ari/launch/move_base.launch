@@ -23,16 +23,16 @@
   <arg name="laser_model"  default="false"/>
   <arg name="laser_suffix" value="$(eval ('_laser' if laser_model else ''))"/>
 
-  <node pkg="move_base" type="move_base" name="move_base" clear_params="true" output="screen"  launch-prefix="$(arg launch_prefix)">
+  <node pkg="move_base" type="move_base" name="move_base" clear_params="true" output="screen" launch-prefix="$(arg launch_prefix)">
     <remap from="odom"    to="$(arg odom)"/>
     <remap from="cmd_vel" to="$(arg cmd_vel)"/>
 
     <rosparam command="load" file="$(arg config_base_path)/config/base/common/move_base.yaml"/>
     <rosparam command="load" file="$(arg config_base_path)/config/base/common/recovery_behaviors$(arg rgbd_suffix).yaml"/>
-    
+
     <rosparam command="load" file="$(arg config_base_path)/config/base/common/global_costmap_plugins$(arg sim_suffix)$(arg rgbd_suffix)$(arg laser_suffix).yaml"/>
     <rosparam command="load" file="$(arg config_base_path)/config/base/common/global_costmap$(arg sim_suffix)$(arg laser_suffix).yaml"/>
-    
+
     <rosparam command="load" file="$(arg config_base_path)/config/base/common/local_costmap_plugins$(arg sim_suffix)$(arg rgbd_suffix)$(arg laser_suffix).yaml"/>
     <rosparam command="load" file="$(arg config_base_path)/config/base/common/local_costmap$(arg sim_suffix)$(arg laser_suffix).yaml"/>
 
