@@ -10,6 +10,7 @@
 
   <node pkg="amcl" type="amcl" name="amcl" output="screen">
     <remap from="scan" to="$(arg scan_topic)"/>
+    <remap from="map" to="$(arg map_topic)"/>
 
     <!-- Load the last saved pose estimate (initial pose) -->
     <rosparam if="$(arg multiple)" file="$(env HOME)/.pal/$(arg robot_namespace)_pose.yaml" command="load"/>
