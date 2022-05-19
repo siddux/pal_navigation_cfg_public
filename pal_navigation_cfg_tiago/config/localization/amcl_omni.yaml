@@ -58,5 +58,5 @@ save_pose_rate: -1.0 # disabled (< 0.0)
 # avoid VOs:
 avoid_unknown: true
 use_map_topic: true
-first_map_only: false
+first_map_only: true
 
