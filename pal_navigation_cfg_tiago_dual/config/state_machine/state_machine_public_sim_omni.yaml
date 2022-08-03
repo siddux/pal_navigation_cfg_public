@@ -10,4 +10,3 @@ planner      : base
 local_planner: teb
 
 visual_enabled: false
-
