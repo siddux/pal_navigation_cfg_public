@@ -2,7 +2,9 @@
 local_costmap:
   # attention, the order and combination method matters
   plugins:
-    - name: stvl_rgbd_layer
-      type: 'spatio_temporal_voxel_layer/SpatioTemporalVoxelLayer'
+    - name: front_obstacle_laser_layer
+      type: 'costmap_2d::ObstacleLayer'
+    - name: rear_obstacle_laser_layer
+      type: 'costmap_2d::ObstacleLayer'
     - name: inflation_layer
       type: 'costmap_2d::InflationLayer'

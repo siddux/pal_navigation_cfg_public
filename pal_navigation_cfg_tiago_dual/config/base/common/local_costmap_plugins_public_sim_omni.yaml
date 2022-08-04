@@ -2,10 +2,10 @@
 local_costmap:
   # attention, the order and combination method matters
   plugins:
-    - name: obstacle_laser_layer
+    - name: front_obstacle_laser_layer
       type: 'costmap_2d::ObstacleLayer'
-    - name: obstacle_sonar_layer
-      type: 'range_sensor_layer::RangeSensorLayer'
+    - name: rear_obstacle_laser_layer
+      type: 'costmap_2d::ObstacleLayer'
     - name: obstacle_rgbd_layer
       type: 'costmap_2d::ObstacleLayer'
     - name: inflation_layer
