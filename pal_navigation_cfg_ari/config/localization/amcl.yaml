@@ -39,7 +39,7 @@ beam_skip_threshold      : 0.3
 beam_skip_error_threshold: 0.9
 
 # Update/Rate params:
-transform_tolerance: 0.5 # This value is to assure that amcl is newest than odometry. It depends on laser offset and frequency
+transform_tolerance: 0.27 # This value is to assure that amcl is newest than odometry. It depends on laser offset and frequency
 gui_publish_rate   : 10.0
 
 # Recovery:
