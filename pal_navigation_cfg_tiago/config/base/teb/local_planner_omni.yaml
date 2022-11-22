@@ -29,8 +29,9 @@ TebLocalPlannerROS:
   acc_lim_theta: 0.2
   is_footprint_dynamic: false
   footprint_model:
-    type: "circular"
-    radius: 0.35
+    type: "line"
+    line_start: [0.15, 0.0]
+    line_end:   [-0.15, 0.0]
 
   # GoalTolerance
 
@@ -40,7 +41,7 @@ TebLocalPlannerROS:
 
   # Obstacles
 
-  min_obstacle_dist: 0.06
+  min_obstacle_dist: 0.3
   include_costmap_obstacles: True
   costmap_obstacles_behind_robot_dist: 1.0
   obstacle_poses_affected: 30
