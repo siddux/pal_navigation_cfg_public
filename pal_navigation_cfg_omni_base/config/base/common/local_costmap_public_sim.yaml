@@ -14,7 +14,7 @@ local_costmap:
   height        : 4.0
   resolution    : 0.025
 
-  robot_radius: 0.35
+  footprint: [[ 0.35, 0.24], [-0.35, 0.24], [-0.35, -0.24], [ 0.35, -0.24]]
 
   #plugins are loaded on a separate file
 
