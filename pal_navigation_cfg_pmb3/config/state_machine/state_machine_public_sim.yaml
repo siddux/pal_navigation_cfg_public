@@ -1,0 +1,12 @@
+robot: pmb3
+
+odometry: controller
+
+mapping: TODO
+
+localization: amcl
+
+planner      : base
+local_planner: TODO
+
+visual_enabled: false
