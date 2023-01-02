@@ -4,5 +4,7 @@ local_costmap:
   plugins:
     - name: obstacle_laser_layer
       type: 'costmap_2d::ObstacleLayer'
+    - name: obstacle_rgbd_layer
+      type: 'spatio_temporal_voxel_layer/SpatioTemporalVoxelLayer'
     - name: inflation_layer
       type: 'costmap_2d::InflationLayer'

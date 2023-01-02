@@ -2,11 +2,11 @@ robot: pmb3
 
 odometry: controller
 
-mapping: TODO
+mapping: gmapping
 
 localization: amcl
 
 planner      : base
-local_planner: TODO
+local_planner: teb
 
 visual_enabled: false
