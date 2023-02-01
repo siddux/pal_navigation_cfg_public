@@ -45,6 +45,7 @@ local_costmap:
     clear_on_max_reading: true
 
 
+
   inflation_layer:
     enabled            : true
     inflation_radius   : 0.55

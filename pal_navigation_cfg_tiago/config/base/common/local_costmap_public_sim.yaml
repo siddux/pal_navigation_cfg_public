@@ -44,6 +44,7 @@ local_costmap:
     mark_threshold: 0.80
     clear_on_max_reading: true
 
+
   obstacle_rgbd_layer:
     enabled: true
     observation_sources: rgbd_scan
