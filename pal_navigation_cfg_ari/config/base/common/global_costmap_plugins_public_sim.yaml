@@ -1,5 +1,6 @@
 # Independent settings for the planner's costmap
 global_costmap:
+  # attention, the order and combination method matters
   plugins:
     - name: static_layer
       type: 'costmap_2d::StaticLayer'

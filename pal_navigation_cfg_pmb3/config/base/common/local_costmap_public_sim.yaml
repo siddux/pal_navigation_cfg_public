@@ -35,7 +35,6 @@ local_costmap:
       raytrace_range: 6.0
       obstacle_range: 5.5
 
-
   obstacle_rgbd_layer:
     enabled:               true
     voxel_decay:           20       # seconds if linear, e^n if exponential
@@ -105,8 +104,7 @@ local_costmap:
       horizontal_fov_angle: 1.5     # default 1.04, radians
       decay_acceleration: 100       # default 0, 1/s^2. If laser scanner MUST be 0
       #voxel_filter: true           # default off, apply voxel filter to sensor, recommend on
-
-
+      
   inflation_layer:
     enabled            : true
     inflation_radius   : 3.0

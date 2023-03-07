@@ -4,9 +4,10 @@
   <version>1.0.0</version>
   <description>Robot specific config and launch files needed to run
     navigation on the pmb3 robot.</description>
-  <author email="yue.erro@pal-robotics.com">Yue Erro</author>
-  <maintainer email="jose.garcia@pal-robotics.com">Jose Carlos</maintainer>
+  <maintainer email="yue.erro@pal-robotics.com">Yue Erro</maintainer>
   <license>Apache License 2.0</license>
+  <author email="jose.garcia@pal-robotics.com">Jose Carlos</author>
+  <author email="sai.kishor@pal-robotics.com">Sai Kishor Kothakota</author>
 
   <buildtool_depend>catkin</buildtool_depend>
 
@@ -18,4 +19,5 @@
   <exec_depend>global_planner</exec_depend>
   <exec_depend>pal_navigation_sm</exec_depend>
   <exec_depend>teb_local_planner</exec_depend>
+
 </package>
