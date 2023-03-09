@@ -4,9 +4,9 @@
   <version>1.0.0</version>
   <description>Robot specific config and launch files needed to run
     navigation on the omni_base robot.</description>
-  <maintainer email="procopio.stein@pal-robotics.com">Procopio Stein</maintainer>
+  <maintainer email="yue.erro@pal-robotics.com">Yue Erro</maintainer>
   <license>Apache License 2.0</license>
-  <author email="procopio.stein@pal-robotics.com">Procopio Stein</author>
+  <author email="jose.garcia@pal-robotics.com">Jose Carlos</author>
   <author email="sai.kishor@pal-robotics.com">Sai Kishor Kothakota</author>
 
   <buildtool_depend>catkin</buildtool_depend>
